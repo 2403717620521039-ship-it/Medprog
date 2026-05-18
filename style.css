@@ -5,13 +5,11 @@
     font-family:Arial, sans-serif;
 }
 
-/* Body */
 body{
     background:#f4f7fb;
     color:#333;
 }
 
-/* Navbar */
 nav{
     background:#0077b6;
     color:white;
@@ -101,7 +99,6 @@ nav ul li a{
     color:#0077b6;
 }
 
-/* Table */
 .doctor-section{
     padding:50px;
     text-align:center;
@@ -127,7 +124,6 @@ th, td{
     padding:15px;
 }
 
-/* Form */
 .appointment-form{
     padding:50px;
     text-align:center;
