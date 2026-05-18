@@ -1,0 +1,171 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+/* Body */
+body{
+    background:#f4f7fb;
+    color:#333;
+}
+
+/* Navbar */
+nav{
+    background:#0077b6;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:20px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* Hero Section */
+.hero{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    padding:50px;
+    flex-wrap:wrap;
+}
+
+.hero-text{
+    width:500px;
+}
+
+.hero-text h2{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.hero-text p{
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+.hero-text button{
+    padding:12px 25px;
+    border:none;
+    background:#0096c7;
+    color:white;
+    font-size:16px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.hero-image img{
+    width:450px;
+    border-radius:10px;
+}
+
+/* Features */
+.features{
+    text-align:center;
+    padding:50px;
+}
+
+.feature-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    margin-top:30px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    width:250px;
+    border-radius:10px;
+    box-shadow:0px 4px 10px rgba(0,0,0,0.1);
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#0077b6;
+}
+
+/* Table */
+.doctor-section{
+    padding:50px;
+    text-align:center;
+}
+
+table{
+    width:80%;
+    margin:auto;
+    border-collapse:collapse;
+    background:white;
+}
+
+table, th, td{
+    border:1px solid #ccc;
+}
+
+th{
+    background:#0077b6;
+    color:white;
+}
+
+th, td{
+    padding:15px;
+}
+
+/* Form */
+.appointment-form{
+    padding:50px;
+    text-align:center;
+}
+
+form{
+    width:50%;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0px 4px 10px rgba(0,0,0,0.1);
+}
+
+form input,
+form select,
+form textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+form button{
+    background:#0077b6;
+    color:white;
+    padding:12px 20px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+/* Footer */
+footer{
+    background:#023e8a;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
+}
