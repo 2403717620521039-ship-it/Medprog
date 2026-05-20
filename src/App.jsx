@@ -9,7 +9,7 @@ function App() {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
-    console.log("Tasks Updated");
+    console.log("Tasks Updated");// updated
   }, [tasks]);
 
   const addTask = () => {
