@@ -1,59 +1,19 @@
 const express = require("express");
 const router = express.Router();
 
-const Patient = require("../models/Patient");
+const Patient = require("../models/patient");
 
-
-// ADD PATIENT
+// CREATE
 router.post("/", async (req, res) => {
-
-    try {
-
-        const patient = new Patient(req.body);
-
-        const savedPatient = await patient.save();
-
-        res.json(savedPatient);
-
-    } catch (error) {
-
-        res.status(500).json({ message: error.message });
-
-    }
+  const data = new Patient(req.body);
+  await data.save();
+  res.json(data);
 });
 
-
-// GET ALL PATIENTS
+// READ
 router.get("/", async (req, res) => {
-
-    try {
-
-        const patients = await Patient.find();
-
-        res.json(patients);
-
-    } catch (error) {
-
-        res.status(500).json({ message: error.message });
-
-    }
-});
-
-
-// DELETE PATIENT
-router.delete("/:id", async (req, res) => {
-
-    try {
-
-        await Patient.findByIdAndDelete(req.params.id);
-
-        res.json({ message: "Patient Deleted" });
-
-    } catch (error) {
-
-        res.status(500).json({ message: error.message });
-
-    }
+  const data = await Patient.find();
+  res.json(data);
 });
 
 module.exports = router;
