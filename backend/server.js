@@ -1,30 +1,31 @@
+console.log("Server starting...");
 const express = require("express");
+const mongoose = require("mongoose");
 const cors = require("cors");
-const dotenv = require("dotenv");
+require("dotenv").config();
 
-const connectDB = require("./config/db");
-
-const authRoutes = require("./routes/authRoutes");
-const appointmentRoutes = require("./routes/appointmentRoutes");
-const patientRoutes = require("./routes/patientRoutes");
-
-dotenv.config();
-connectDB();
-
-const app = express();   // ✅ MUST come FIRST
+const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-// ROUTES (after app is created)
-app.use("/auth", authRoutes);
-app.use("/appointments", appointmentRoutes);
-app.use("/patients", patientRoutes);
+// Routes
+app.use("/patients", require("./routes/patientRoutes"));
+app.use("/appointments", require("./routes/appointmentRoutes"));
+app.use("/auth", require("./routes/authRoutes"));
 
+// MongoDB
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB Connected"))
+  .catch((err) => console.log(err));
+
+// Test route
 app.get("/", (req, res) => {
-  res.send("MedQueue API Running");
+  res.send("API Running");
 });
 
-app.listen(process.env.PORT, () => {
-  console.log("Server running on port", process.env.PORT);
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log("Server running on port", PORT);
 });
