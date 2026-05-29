@@ -4,21 +4,27 @@ const dotenv = require("dotenv");
 
 const connectDB = require("./config/db");
 
+const authRoutes = require("./routes/authRoutes");
 const appointmentRoutes = require("./routes/appointmentRoutes");
 const patientRoutes = require("./routes/patientRoutes");
 
 dotenv.config();
 connectDB();
 
-const app = express();
+const app = express();   // ✅ MUST come FIRST
 
 app.use(cors());
 app.use(express.json());
 
-// ✅ MUST BE EXACT
+// ROUTES (after app is created)
+app.use("/auth", authRoutes);
 app.use("/appointments", appointmentRoutes);
 app.use("/patients", patientRoutes);
 
-app.listen(3000, () => {
-  console.log("Server running on port 3000");
+app.get("/", (req, res) => {
+  res.send("MedQueue API Running");
+});
+
+app.listen(process.env.PORT, () => {
+  console.log("Server running on port", process.env.PORT);
 });

@@ -1,12 +1,11 @@
 const mongoose = require("mongoose");
 
 const patientSchema = new mongoose.Schema({
-  patientName: { type: String, required: true },
+  patientName: String,
   age: Number,
   gender: String,
   phone: String,
-  address: String,
-  bloodGroup: String
+  address: String
 });
 
 module.exports = mongoose.model("Patient", patientSchema);
